@@ -12,21 +12,27 @@
 <body>
     <div class="app">
     <header>
-        <form action="">
-            <input type="search" placeholder="Enter a city..." required>
-            <input type="submit" value="Search">
+        <form action="" class="search-form">
+            <input type="search" placeholder="Enter a city..." required class="search-input">
+            <input type="submit" value="Search" class="search-button">
         </form>
     </header>
     <main>
+        <div class="weather-data">
         <div>
-            <h1>Paris</h1>
-            <p>
+            <h1 class="app-city">Paris</h1>
+            <p class="app-details">
             Tuesday 14:49, scattered clouds
             <br>
-            Humidity 66%, Wind 3.3km/h
+            Humidity <strong>66%</strong>, Wind <strong>3.3km/h</strong>
             </p>
         </div>
-        <div>⛅12℃</div>
+        <div class="app-temperature-container"> 
+            <div class="app-icon">⛅</div>
+            <div class="app-temperature">12</div>
+            <div class="app-unit">℃</div>
+        </div>
+        </div>
     </main>
     <footer>
         This app was developed by <a href="https://github.com/nmanyange" target="_blank">Nyaradzo Manyange</a> is<a href="https://github.com/nmanyange/weather-forecast" target="_blank"> open-sourced on GitHub</a> and <a href="https://idyllic-pixie-c9aebb.netlify.app/" target="_blank">hosted on Netlify</a>
