@@ -23,8 +23,12 @@ function updateWeather(response) {
 function formatDate(date) {
     let hours = date.getHours();
     let minutes = date.getMinutes();
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
+
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
 
     return `${day} ${hours}:${minutes}`;
 }
