@@ -10,7 +10,7 @@ function updateWeather(response) {
     let date = new Date(response.data.time * 1000);
     let iconElement = document.querySelector("#app-icon"); 
     
-    iconElement.innerHTML=`<img src="${response.condition.icon.url}" class="app-icon"`;
+    iconElement.innerHTML=`<img src="${response.data.condition.icon.url}" class="app-icon" />`;
 
     cityElement.innerHTML = response.data.city;
     timeElement.innerHTML = formatDate(date);
