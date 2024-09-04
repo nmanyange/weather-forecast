@@ -18,6 +18,8 @@ function updateWeather(response) {
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
     temperatureElement.innerHTML = Math.round(temperature);
+    iconElement.innerHtml = `<img src="${response.data.condition.icon_url}" class="app-icon" />`;
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -76,5 +78,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSubmit);
 
 searchCity("Paris");
-displayForecast();
+
 
