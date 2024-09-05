@@ -10,7 +10,6 @@ function updateWeather(response) {
     let date = new Date(response.data.time * 1000);
     let iconElement = document.querySelector("#app-icon"); 
     
-    iconElement.innerHTML=`<img src="${response.data.condition.icon.url}" class="app-icon" />`;
 
     cityElement.innerHTML = response.data.city;
     timeElement.innerHTML = formatDate(date);
@@ -58,13 +57,11 @@ function formatDay(timestamp) {
 
 function getForecast(city) {
     let apiKey = "b94f4fd195690f61bbe66t5d0211o3a0";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     axios(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
-    console.log(response.data);
-
     let forecastHtml = "";
 
     response.data.daily.forEach(function (day, index) {
